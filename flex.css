@@ -1,0 +1,113 @@
+/*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+html, body{     /*elimina margin e padding in body*/
+    margin: 0px;
+    padding: 0px; 
+}
+
+*{
+    box-sizing: border-box; /*conta nelle dimensioni sia bordo che padding*/
+    /* border: 3px solid gold; <- crea bordo per tutti gli elementi*/
+    /* border: none !important;*/ /*prioritizza questo comando su tutti gli altri border */
+}
+
+.flex-container{
+    border: 6px solid red; /*crea bordo*/
+    height: 100vh;/*view height*/
+    width: 100vw; /*view width*/
+    display: flex; /*dispone tutto in riga, annullando lo stile di prima*/
+    flex-direction: column; /*dispone la flex in colonne, "ripristinando" lo stile di prima*/
+    
+}
+
+header{
+    height: 200px; /*viene rimosso l'height per dimostrare come flex-grow gestisce automaticamente l'altezza tra gli elementi. Fa la somma del grow e divide l'intero.*/
+    border: 4px solid goldenrod;
+    /*flex-grow: 1;*/ /*espande l'elemento, 1 è proporzione spazio che puo' prendersi*/ 
+    display: flex; /*allinea gli elementi nell'header*/
+    justify-content: space-between; /*separa i due elementi con uno spazio nel mezzo*/
+    align-items: center; /*posiziona gli elementi al centro*/
+}
+
+main{
+    /* height: 100px; */
+    border: 4px solid green;
+    flex-grow: 2; 
+    display: flex;
+}
+
+footer{
+    height: 100px;
+    border: 4px solid black;
+    /*flex-grow: 1;*/
+}
+.header-title{
+    border: 6px solid coral;
+}
+.header-png{
+    border: 6px solid blue;
+    width: 100px;
+}
+.left{
+    border: 6px solid violet;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.center{
+    border: 6px solid palegreen;
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0; /*siccome il testo era troppo lungo, basis ripristina le dimensioni contenendo l'elemento invadente*/
+}
+.right{
+    border: 6px solid firebrick;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0;
+}
+.nav-menu{
+    border: 6px solid darkgoldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social-menu{
+    border: 6px solid seagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    border: 6px solid red;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+}
+.content-png{
+    width: 200px;
+    border: 6px solid blue;
+}
+.content-text{
+    border: 6px solid teal;
+}
+.inverted{
+    flex-direction: row-reverse; /* "-reverse" inverte gli elementi della classe row*/
+}
+.listrow{
+    border: 6px solid tomato;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.list{
+    border: 6px solid darkolivegreen;
+}
+.end{
+    justify-content: flex-end;
+}
